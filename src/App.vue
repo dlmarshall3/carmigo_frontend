@@ -1,17 +1,20 @@
 <template>
-  <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <div id="app" class="container-fluid">
+    <vinHeader></vinHeader>
+    <vinBody></vinBody>
   </div>
 </template>
 
 <script>
+import vinHeader from './components/vinHeader.vue'
+import vinBody from './components/vinBody.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    vinHeader,
+    vinBody
   }
 }
 </script>
@@ -24,6 +27,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   background-image: url('assets/bg-md.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
 }
 </style>
