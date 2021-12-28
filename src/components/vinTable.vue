@@ -23,10 +23,12 @@
     </table>
     </div>
 </template>
+    
+    
+
+
 
 <script>
-
-
 
 export default {
     name: 'vinTable',
@@ -37,7 +39,9 @@ export default {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },} 
       fetch(`http://carmigo-master.herokuapp.com/api/v1/vehicles/${id}`, requestOptions)
-        },
+      .then(alert('Vehicle deleted'))
+      .then(function setTimeout() { location.reload(), 200})
+        }
     }
 }
 
@@ -49,7 +53,7 @@ export default {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-content: space-evenly;
+    align-content: space-around;
 }
 
 #vinTable {

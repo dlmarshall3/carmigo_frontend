@@ -14,7 +14,7 @@
         type="number"
         icon-pack="fas"
         icon="id-card"
-        v-model="v_id">
+        v-model="id">
         </b-input>
       </b-field>
 
@@ -23,7 +23,7 @@
         type="number"
         icon-pack="fas"
         icon="hashtag"
-        v-model="year">
+        v-model="year" required>
         </b-input>
       </b-field>
 
@@ -32,7 +32,7 @@
         type="text"
         icon-pack="fas"
         icon="car"
-        v-model="make">
+        v-model="make" required>
         </b-input>
       </b-field>
 
@@ -41,7 +41,7 @@
         type="text"
         icon-pack="fas"
         icon="truck-pickup"
-        v-model="model">
+        v-model="model" required>
         </b-input>
       </b-field>
 
@@ -50,14 +50,13 @@
         type="text"
         icon-pack="fas"
         icon="palette"
-        v-model="new_color">
+        v-model="new_color" required>
         </b-input>
       </b-field>
 
       <div class="column" id="vinButtons">
       <b-button type="is-dark" v-on:click="addVehicle(); resetInputs()" class="vinButton">Submit</b-button>
-      <b-button v-on:click="updateVehicle(); resetInputs()" class="vinButton">Update Existing</b-button>
-      <b-button v-on:click="refreshVehicles(); resetInputs()" class="vinButton">Refresh Garage</b-button>
+      <b-button v-on:click="updateVehicle(id); resetInputs()" class="vinButton">Update Existing</b-button>
       </div>
       </form>
     </div>
@@ -86,13 +85,24 @@ export default {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({
+          id: this.id,
           year: this.year,
           make: this.make,
           model: this.model,
           new_color: this.new_color
         })
       }
+       fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/', requestOptions)
+      let inputs = JSON.parse(requestOptions.body)
+      if(Object.values(inputs).some(val => val === "")){
+        alert('Missing fields')
+      }
+      else {
       fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/', requestOptions)
+      .then(alert('Vehicle added'))
+      .then(function setTimeout() { location.reload(), 200})
+      }
+      
  
     },
     showVehicles(){
@@ -101,30 +111,29 @@ export default {
       .then((responseData) => (this.apiData = responseData));
       this.apiData = data;
     },
-    refreshVehicles(){
-
-      const data = fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/')
-      .then((response) => response.json())
-      .then((responseData) => (this.apiData = responseData));
-      this.apiData = data
+    updateVehicle(){
       
-    },
-    updateVehicle(id){
       const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({
-          v_id: this.id,
+          id: this.id,
           year: this.year,
           make: this.make,
           model: this.model,
           new_color: this.new_color
         })
       }
-      fetch(`http://carmigo-master.herokuapp.com/api/v1/vehicles/${id}`, requestOptions)
-      .then(console.log('hello'))
-      // .then(this.showVehicles())
-      // .then(this.showVehicles())
+      let inputs = JSON.parse(requestOptions.body)
+      if(Object.values(inputs).some(val => val === "")){
+        alert('Missing field')
+      }
+      else {
+      fetch(`http://carmigo-master.herokuapp.com/api/v1/vehicles/${this.id}`, requestOptions)
+      .then(alert('Vehicle updated'))
+      .then(function setTimeout() { location.reload(), 200})
+      }
+      
     },
     resetInputs(){
       this.$refs["formInput"].reset();
@@ -133,7 +142,7 @@ export default {
   data(){
     return {
       apiData: "",
-      v_id: "",
+      id: "",
       year: "",
       make: "",
       model: "",
