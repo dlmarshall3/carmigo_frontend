@@ -4,11 +4,13 @@
     <div class="column">
         <img src="./assets/sports.png">
     </div>
-    <div class="column is-two-thirds">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam placeat exercitationem et, necessitatibus, soluta est id molestiae harum, atque nobis eligendi tempora fugiat similique inventore voluptas labore aspernatur quaerat nesciunt.
-    Cumque neque eaque tempora illo repellat odio voluptatibus necessitatibus quidem quam blanditiis optio doloribus, aliquid beatae asperiores perspiciatis sit soluta a iure saepe rerum. Quaerat eius dolorum praesentium porro unde!
-    Architecto exercitationem veniam voluptas dolore alias mollitia, repellat amet voluptates ad minus deleniti harum perferendis molestias, sapiente et tenetur qui porro ab delectus vel enim autem aliquam blanditiis. Eum, iusto.
-    Esse earum ea perspiciatis architecto quos, alias eum magni culpa deleniti corporis maiores molestiae obcaecati non, similique, quia voluptate nobis aperiam error exercitationem delectus nemo quasi ratione animi ducimus? Culpa.
-    Commodi enim laborum, inventore quam aperiam distinctio? Excepturi, nostrum. Et repellendus ea quam accusantium temporibus esse voluptatibus reprehenderit id ipsa modi dicta corporis atque repudiandae vero, voluptate cum officia delectus.</div>
+    <div class="column is-two-thirds">
+      <p>Ever stay up late, wondering what high-end vehicle you plan on buying next? <i>(Yeah, same here.)</i> Well, look no further! VINsomnia is the easy way to keep track of the hot rod of your dreams when your burning wallet is keeping you from sleep. All you need to do is add the year, make, model, and color of the vehicle you're going to send your $12/hr assistant to purchase for you, and BOOM! The list is automatically updated. Change your mind? Finally pulled the trigger? You can delete that rig with the single click of a button!</p>
+      <p>If you've enjoyed this page, please make sure to head over to my 
+      <a href="https://github.com/dlmarshall3/carmigo_master">GitHub page</a> and give this repo a star.</p>
+      <p>Once you're done driving that Maserati that costs more than your mortgage, that is.</p>
+      <p><b>You rockstar, you.</b></p>
+    </div>
 </div>
 
 
@@ -30,8 +32,10 @@ export default {
 
 #vinBody {
   padding-top: 30px;
-  background-color: rgba(255,255,255,.6)
-  height:
+  background-color: rgba(255,255,255,.6);
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 2.2;
 }
 
 </style>
