@@ -1,35 +1,39 @@
 <template>
   <div id="app" class="container-fluid">
     <vinHeader></vinHeader>
-    <vinBodyText></vinBodyText>
+    <vinBody></vinBody>  
+    <vinGarage></vinGarage>
   </div>
 </template>
 
 <script>
 import vinHeader from './components/vinHeader.vue'
-import vinBodyText from './components/vinBodyText.vue'
-// import HelloWorld from './components/HelloWorld.vue'
+import vinBody from './components/vinBody.vue'
+import vinGarage from './components/vinGarage.vue'
 
 export default {
   name: 'App',
   components: {
     vinHeader,
-    vinBodyText
+    vinBody,
+    vinGarage,
   }
 }
 </script>
 
 <style>
+
+html {
+  min-height: 100%;
+  background-image: url('assets/bg-md.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-image: url('assets/bg-md.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
 }
 </style>
