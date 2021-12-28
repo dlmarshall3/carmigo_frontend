@@ -1,17 +1,22 @@
 <template>
 
 <div id="vinGarage">
+
+   
     <h3 class="subtitle is-1">Your Garage</h3>
+
+    <vinTable :vehicles="apiData"></vinTable>
+
     <form>
     <label for="year"></label>
-    <input name="year" type="number" placeholder="Year">
+    <input v-model="year" name="year" type="number" placeholder="Year">
     <label for="make"></label>
-    <input name="make" type="text" placeholder="Make">
+    <input v-model="make" name="make" type="text" placeholder="Make">
     <label for="model"></label>
-    <input name="model" type="text" placeholder="Model">
+    <input v-model="model" name="model" type="text" placeholder="Model">
     <label for="color"></label>
-    <input name="color" type="text" placeholder="color">
-    <button>Submit</button>
+    <input v-model="new_color" name="color" type="text" placeholder="Color">
+    <button v-on:click="addVehicle">Submit</button>
     </form>
 </div>
 
@@ -19,11 +24,46 @@
 
 <script>
 
+import vinTable from './vinTable.vue'
 
 export default {
   name: 'vinGarage',
   components: {
-      
+      vinTable,
+  },
+  methods: {
+    addVehicle(){
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          year: this.year,
+          make: this.make,
+          model: this.model,
+          new_color: this.new_color
+        })
+      }
+      this.sharkTank.push(requestOptions)
+      // fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/', requestOptions)
+    }
+  },
+  data(){
+    return {
+      apiData: "",
+      year: "",
+      make: "",
+      model: "",
+      new_color: "",
+      sharkTank: []
+    }
+  },
+  created () {
+    const data = fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/')
+    .then((response) => response.json())
+    .then((responseData) => (this.apiData = responseData));
+    this.apiData = data;
+    console.log(this.apiData)
+    this.apiData = data;
   }
 }
 </script>

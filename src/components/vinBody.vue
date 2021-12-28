@@ -10,20 +10,20 @@
       <a href="https://github.com/dlmarshall3/carmigo_master">GitHub page</a> and give this repo a star.</p>
       <p>Once you're done driving that Maserati that costs more than your mortgage, that is.</p>
       <p><b>You rockstar, you.</b></p>
+      <ContactUs/>
     </div>
 </div>
-
-
 
 </template>
 
 <script>
 
+import ContactUs from './ContactUs.vue'
 
 export default {
   name: 'vinBody',
   components: {
-      
+      ContactUs
   }
 }
 </script>

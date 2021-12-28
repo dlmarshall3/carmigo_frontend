@@ -30,8 +30,8 @@ export default {
 <style>
 
 #contactUs {
-  background-color: rgba(255,255,255,.6);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 </style>

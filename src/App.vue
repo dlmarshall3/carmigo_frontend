@@ -1,8 +1,7 @@
 <template>
   <div id="app" class="container-fluid">
     <vinHeader></vinHeader>
-    <vinBody></vinBody>
-    <ContactUs></ContactUs>    
+    <vinBody></vinBody>  
     <vinGarage></vinGarage>
   </div>
 </template>
@@ -11,7 +10,7 @@
 import vinHeader from './components/vinHeader.vue'
 import vinBody from './components/vinBody.vue'
 import vinGarage from './components/vinGarage.vue'
-import ContactUs from './components/ContactUs.vue'
+// import ContactUs from './components/ContactUs.vue'
 
 export default {
   name: 'App',
@@ -19,12 +18,13 @@ export default {
     vinHeader,
     vinBody,
     vinGarage,
-    ContactUs
+    // ContactUs
   }
 }
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
