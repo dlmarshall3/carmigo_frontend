@@ -7,7 +7,7 @@
 
     <vinTable :vehicles="apiData"></vinTable>
 
-    <form>
+    <form @submit.prevent>
     <label for="year"></label>
     <input v-model="year" name="year" type="number" placeholder="Year">
     <label for="make"></label>
@@ -16,8 +16,10 @@
     <input v-model="model" name="model" type="text" placeholder="Model">
     <label for="color"></label>
     <input v-model="new_color" name="color" type="text" placeholder="Color">
-    <button v-on:click="addVehicle">Submit</button>
+     <button v-on:click="addVehicle">Submit</button>
+    <button v-on:click="showVehicles">Display Garage</button>
     </form>
+   
 </div>
 
 </template>
@@ -43,8 +45,14 @@ export default {
           new_color: this.new_color
         })
       }
-      this.sharkTank.push(requestOptions)
-      // fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/', requestOptions)
+      fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/', requestOptions)
+    },
+    showVehicles(){
+      console.log('component mounted')
+      const data = fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/')
+      .then((response) => response.json())
+      .then((responseData) => (this.apiData = responseData));
+      this.apiData = data;
     }
   },
   data(){
@@ -54,17 +62,8 @@ export default {
       make: "",
       model: "",
       new_color: "",
-      sharkTank: []
     }
   },
-  created () {
-    const data = fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/')
-    .then((response) => response.json())
-    .then((responseData) => (this.apiData = responseData));
-    this.apiData = data;
-    console.log(this.apiData)
-    this.apiData = data;
-  }
 }
 </script>
 
