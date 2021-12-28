@@ -1,6 +1,6 @@
 <template>
     <div id="vinTable">
-        <h3 class="subtitle is-1">Your Garage</h3>
+
     <table id="vinTable">
         <thead>
             <tr><th>ID</th>
@@ -50,6 +50,10 @@ export default {
     display: flex;
     justify-content: center;
     align-content: space-evenly;
+}
+
+#vinTable {
+    width: 100%;
 }
 
 </style>

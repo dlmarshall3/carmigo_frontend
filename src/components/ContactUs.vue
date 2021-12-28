@@ -1,5 +1,19 @@
 <template>
   <form ref="form" @submit.prevent="sendEmail" id="contactUs">
+    
+    
+    
+     <!-- <b-field>
+        <b-input placeholder="Year"
+        type="number"
+        icon-pack="fas"
+        icon="hashtag"
+        v-model="year">
+        </b-input>
+      </b-field>
+     -->
+    
+    
     <label>Name</label>
     <input type="text" name="user_name">
     <label>Email</label>
@@ -7,6 +21,10 @@
     <label>Message</label>
     <textarea name="message"></textarea>
     <input type="submit" value="Send">
+
+
+
+
   </form>
 </template>
 
