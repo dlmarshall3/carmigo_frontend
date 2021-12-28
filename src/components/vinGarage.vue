@@ -1,6 +1,7 @@
 <template>
 
 <div id="vinGarage" class="container-fluid">
+  <hr>
   <h3 class="subtitle is-1">Your Garage</h3>
   <div class="columns is-two-thirds">
     <div class="column" id="garageData">
@@ -92,9 +93,8 @@ export default {
           new_color: this.new_color
         })
       }
-       fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/', requestOptions)
       let inputs = JSON.parse(requestOptions.body)
-      if(Object.values(inputs).some(val => val === "")){
+      if(inputs.year == "" || inputs.make == "" || inputs.model == "" || inputs.new_color == ""){
         alert('Missing fields')
       }
       else {
@@ -161,7 +161,7 @@ export default {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: rgba(255,255,255,.6);
+    background-color: rgba(255,255,255,.45);
 }
 
 #vinForm{

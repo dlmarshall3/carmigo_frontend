@@ -1,31 +1,43 @@
 <template>
+  <div class="container">
+    <hr>
+    <h3 class="subtitle is-3">Contact Us:</h3>
   <form ref="form" @submit.prevent="sendEmail" id="contactUs">
     
-    
-    
-     <!-- <b-field>
-        <b-input placeholder="Year"
-        type="number"
-        icon-pack="fas"
-        icon="hashtag"
-        v-model="year">
-        </b-input>
-      </b-field>
-     -->
-    
-    
-    <label>Name</label>
-    <input type="text" name="user_name">
-    <label>Email</label>
-    <input type="email" name="user_email">
-    <label>Message</label>
-    <textarea name="message"></textarea>
-    <input type="submit" value="Send">
+    <b-field>
+      <b-input 
+      placeholder="Name"
+      type="text"
+      name="user_name"></b-input>
+    </b-field>
 
+    <b-field>
+      <b-input 
+      placeholder="Email"
+      type="email"
+      name="user_email"></b-input>
+    </b-field>
 
+    <b-field>
+      <b-input 
+      placeholder="Message"
+      type="textarea"
+      minlength="50"
+      maxlength="5000"
+      name="message">
+      </b-input>
+    </b-field>
 
+    <b-field>
+      <b-input
+      type="submit"
+      value="Send"
+      size="is-medium">
+      </b-input>
+    </b-field>
 
   </form>
+  </div>
 </template>
 
 <script>
@@ -36,12 +48,16 @@ export default {
     sendEmail() {
       emailjs.sendForm('carmigo_test', 'contact_form', this.$refs.form, 'user_XVbIe1wrAqv1iZNKmMgfB')
         .then((result) => {
-            console.log('SUCCESS!', result.text);
+            alert('Email sent!', result.text)
+            this.resetInputs()
         }, (error) => {
-            console.log('FAILED...', error.text);
+            alert('Error', error.text);
         });
-    }
+    },
+    resetInputs(){
+      this.$refs["form"].reset();
   }
+}
 }
 </script>
 

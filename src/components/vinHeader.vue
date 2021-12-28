@@ -19,7 +19,7 @@ export default {
 
 #header {
   padding-top: 30px;
-  background-color: rgba(255,255,255,.6);
+  background-color: rgba(255,255,255,.45);
   text-align: center;
   padding-bottom: 30px;
   margin-bottom: 12px;
