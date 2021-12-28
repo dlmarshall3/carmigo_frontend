@@ -16,8 +16,7 @@
     <input v-model="model" name="model" type="text" placeholder="Model">
     <label for="color"></label>
     <input v-model="new_color" name="color" type="text" placeholder="Color">
-     <button v-on:click="addVehicle">Submit</button>
-    <button v-on:click="showVehicles">Display Garage</button>
+    <button v-on:click="addVehicle">Submit</button>
     </form>
    
 </div>
@@ -46,9 +45,10 @@ export default {
         })
       }
       fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/', requestOptions)
+      .then(this.showVehicles())
+      .then(this.showVehicles())
     },
     showVehicles(){
-      console.log('component mounted')
       const data = fetch('http://carmigo-master.herokuapp.com/api/v1/vehicles/')
       .then((response) => response.json())
       .then((responseData) => (this.apiData = responseData));
@@ -64,6 +64,9 @@ export default {
       new_color: "",
     }
   },
+  mounted(){
+    this.showVehicles()
+  }
 }
 </script>
 
