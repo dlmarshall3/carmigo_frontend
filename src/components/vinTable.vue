@@ -13,7 +13,7 @@
               <td>{{ vehicle.year }} </td>
               <td>{{ vehicle.make }} </td>
               <td>{{ vehicle.model }} </td>
-              <td>{{ vehicle.new_color }}</td>
+              <td>{{ vehicle.new_color }} </td>
               <td><i class="fas fa-trash" v-on:click="deleteVehicle(vehicle.id)"></i></td>
           </tr>
       </tbody>
@@ -21,6 +21,8 @@
 </template>
 
 <script>
+
+
 
 export default {
     name: 'vinTable',
@@ -31,11 +33,20 @@ export default {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },} 
       fetch(`http://carmigo-master.herokuapp.com/api/v1/vehicles/${id}`, requestOptions)
-        }
+        .then(window.location.reload())
+        },
     }
 }
+
 </script>
 
-<style scoped>
+<style>
+
+#tableDiv {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+}
 
 </style>

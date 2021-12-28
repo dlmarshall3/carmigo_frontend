@@ -1,24 +1,27 @@
 <template>
 
-<div id="vinGarage">
+<div id="vinGarage" class="container-fluid">
 
    
     <h3 class="subtitle is-1">Your Garage</h3>
-
-    <vinTable :vehicles="apiData"></vinTable>
-
-    <form @submit.prevent>
-    <label for="year"></label>
-    <input v-model="year" name="year" type="number" placeholder="Year">
-    <label for="make"></label>
-    <input v-model="make" name="make" type="text" placeholder="Make">
-    <label for="model"></label>
-    <input v-model="model" name="model" type="text" placeholder="Model">
-    <label for="color"></label>
-    <input v-model="new_color" name="color" type="text" placeholder="Color">
-    <button v-on:click="addVehicle">Submit</button>
-    </form>
-   
+    <div class="columns">
+    <div class="column" id="garageData">
+      <vinTable :vehicles="apiData"></vinTable>
+    </div>
+    <div class="column">
+      <form @submit.prevent id="vinForm">
+      <label for="year"></label>
+      <input v-model="year" name="year" type="number" placeholder="Year">
+      <label for="make"></label>
+      <input v-model="make" name="make" type="text" placeholder="Make">
+      <label for="model"></label>
+      <input v-model="model" name="model" type="text" placeholder="Model">
+      <label for="color"></label>
+      <input v-model="new_color" name="color" type="text" placeholder="Color">
+      <button v-on:click="addVehicle">Submit</button>
+      </form>
+    </div>
+    </div>
 </div>
 
 </template>
@@ -77,6 +80,18 @@ export default {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: rgba(255,255,255,.6);
+}
+
+#vinForm{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#garageData{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
  
 

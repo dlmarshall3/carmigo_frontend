@@ -10,7 +10,6 @@
 import vinHeader from './components/vinHeader.vue'
 import vinBody from './components/vinBody.vue'
 import vinGarage from './components/vinGarage.vue'
-// import ContactUs from './components/ContactUs.vue'
 
 export default {
   name: 'App',
@@ -18,22 +17,23 @@ export default {
     vinHeader,
     vinBody,
     vinGarage,
-    // ContactUs
   }
 }
 </script>
 
 <style>
 
+html {
+  min-height: 100%;
+  background-image: url('assets/bg-md.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('assets/bg-md.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #2c3e50;
-  height: 100vh;
 }
 </style>
