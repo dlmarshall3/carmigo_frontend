@@ -1,20 +1,20 @@
 <template>
   <div id="app" class="container-fluid">
     <vinHeader></vinHeader>
-    <vinBody></vinBody>
+    <vinBodyText></vinBodyText>
   </div>
 </template>
 
 <script>
 import vinHeader from './components/vinHeader.vue'
-import vinBody from './components/vinBody.vue'
+import vinBodyText from './components/vinBodyText.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
     vinHeader,
-    vinBody
+    vinBodyText
   }
 }
 </script>
