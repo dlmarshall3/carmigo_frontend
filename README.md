@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# carmigo_front_end
-=======
 
 # VINsomnia
 
@@ -22,7 +19,6 @@ Again, thank you to Sean for this opportunity. Huge shout-out to all of my mento
 
 
 # Instructions if you want to clone/deploy
->>>>>>> 2427b555d8bfd6d253429d6ad965dd516aa5af43
 
 ## Project setup
 ```

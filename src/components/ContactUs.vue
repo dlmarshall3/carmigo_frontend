@@ -8,14 +8,16 @@
       <b-input 
       placeholder="Name"
       type="text"
-      name="user_name"></b-input>
+      name="user_name"
+      required></b-input>
     </b-field>
 
     <b-field>
       <b-input 
       placeholder="Email"
       type="email"
-      name="user_email"></b-input>
+      name="user_email"
+      required></b-input>
     </b-field>
 
     <b-field>
@@ -24,7 +26,8 @@
       type="textarea"
       minlength="50"
       maxlength="5000"
-      name="message">
+      name="message"
+      required>
       </b-input>
     </b-field>
 
