@@ -8,7 +8,7 @@ This application exists because I was given the assignment to create a full-stac
 
 ## Criteria
 
-I was asked to create a full-stack application where a user could add, remove, and update vehicles from a databse with an interactive user interface. As mentioned above, I used Vue.js, Node.js/Express, and postgreSQL to comlpete these assessment. The front end is deployed via Surge, which you can access in several parts of this readme/page, and the backend is deployed via Heroku.
+I was asked to create a full-stack application where a user could add, remove, and update vehicles from a databse with an interactive user interface. As mentioned above, I used Vue.js, Node.js/Express, and postgreSQL to complete these assessment. The front end is deployed via Surge, which you can access in several parts of this readme/page, and the backend is deployed via Heroku.
 
 ## Challenges
 
