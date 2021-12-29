@@ -3,7 +3,7 @@
 
 ## Project description
 
-This application exists because I was given the assignment to create a full-stack application in: Vue.js, Node.js/Express, and postgreSQL. I had never touched any of these frameworks/libraries before starting this project, but needless to say, I've had a great time. Thank you to Sean of Carmigo for giving me this opportunity!
+This application exists because I was given the assignment to create a full-stack application in: Vue.js, Node.js/Express, and postgreSQL. I had never touched any of these frameworks/libraries before starting this project, but needless to say, I've had a great time. Thank you, Sean, for giving me this opportunity!
 
 ## Criteria
 
