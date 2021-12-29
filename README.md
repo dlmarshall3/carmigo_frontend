@@ -1,5 +1,7 @@
 # VINsomnia
 
+Click here to deploy: https://white-rhythm.surge.sh/
+
 ## Project description
 
 This application exists because I was given the assignment to create a full-stack application in: Vue.js, Node.js/Express, and postgreSQL. I had never touched any of these frameworks/libraries before starting this project, but needless to say, I've had a great time. Thank you, Sean, for giving me this opportunity!
