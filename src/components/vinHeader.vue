@@ -1,6 +1,5 @@
 <template>
 
-  <!--it's a header! -->
   <h1 class="title is-1" id="header">VINsomnia</h1>
 
 </template>

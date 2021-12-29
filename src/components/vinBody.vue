@@ -35,14 +35,12 @@ export default {
   background-color: rgba(255,255,255,.45);
   padding-left: 20px;
   padding-right: 20px;
-  line-height: 2;
+  line-height: 3;
   margin-bottom: 0px;
 }
 
 #img {
   display: flex;
-  align-content: center;
-  justify-content: center;
 }
 
 </style>
