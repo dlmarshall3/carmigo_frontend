@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> a3841531cf9e535d72c6f74a42b72586e8a0c59d
 # VINsomnia
 
 Click here to deploy: https://white-rhythm.surge.sh/
