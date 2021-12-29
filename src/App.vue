@@ -25,7 +25,7 @@ export default {
 
 html {
   min-height: 100%;
-  background-image: url('assets/bg-3.png');
+  background-image: url('assets/bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
